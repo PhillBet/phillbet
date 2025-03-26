@@ -1,0 +1,12 @@
+
+.console-pane{
+    background: rgba(0, 94, 97, 0.80); /* Fondo semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado dentro del componente */
+    color: white; /* Color del texto */
+    width: 90%; /* Ancho del componente */
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    margin: 20px auto; /* Centrado en la pantalla */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(5px); /* Para compatibilidad con Safari */
+}
