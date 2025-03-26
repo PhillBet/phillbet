@@ -1,0 +1,29 @@
+
+.contact-pane{
+    /*background: rgba(0, 94, 97, 0.80);*/
+    background: transparent;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    width: 90%;
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    text-align: justify;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 70vh;
+    max-height: 70vh;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .contact-pane{
+        height: 50vh;
+        max-height: 50vh;
+    }
+}

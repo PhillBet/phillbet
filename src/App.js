@@ -4,44 +4,41 @@ import './styles/App.css';
 import React, { useState } from 'react';
 import {KeyboardArrowRight} from "@mui/icons-material";
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import ConsolePane from './components/console_pane/console_pane.jsx';
+import ContactPane from './components/contact_pane/contact_pane.jsx';
 import {Grid} from '@mui/material';
 
 function App() {
 
-    // Define el estado que controla qué contenido mostrar en el panel izquierdo
     const [selectedOption, setSelectedOption] = useState('Home');
-    const [fade, setFade] = useState(false); // Estado para controlar el fade
+    const [fade, setFade] = useState(false);
 
-    // Función para cambiar el contenido del panel izquierdo según la opción seleccionada
     const handleOptionClick = (option) => {
-        setFade(true); // Activar el fade cuando se selecciona una opción
+        setFade(true);
         setTimeout(() => {
             setSelectedOption(option);
-            setFade(false); // Desactivar el fade después de que el contenido haya cambiado
-        }, 500); // Duración del fade (500ms)
+            setFade(false);
+        }, 500);
     };
 
-    // Contenido para cada opción
     const renderContent = () => {
         switch (selectedOption) {
             case 'Contact':
                 return <div className="selected-content">
                     <p>
-                        <h2>About me.</h2>
-                        <ConsolePane></ConsolePane>
+                        <h2 className="selected-content-title">About me.</h2>
+                        <ContactPane></ContactPane>
                     </p>
                 </div>;
             case 'Experience':
                 return <div className="selected-content">
                     <p>
-                        <h2>My Experience.</h2>
+                        <h2 className="selected-content-title">My Experience.</h2>
                     </p>
                 </div>;
             case 'My Work':
                 return <div className="selected-content">
                     <p>
-                        <h2>My Work.</h2>
+                        <h2 className="selected-content-title">My Work.</h2>
                     </p>
                 </div>;
             case 'Home':
@@ -61,10 +58,8 @@ function App() {
         }
     };
     return (
-        <Grid container className={"container"} direction={{ xs: "column", md: "row" }}
-              // style={{backgroundImage: `url(${bgImg})`}}
-        >
-            {/* Panel izquierdo (10/12) */}
+        <Grid container className={"container"} direction={{ xs: "column", md: "row" }} >
+            {/* left-panel (10/12) */}
             <Grid item xs={8} md={10} className={"left-panel"}
                   style={{backgroundImage: `url(${bgImg})`}}
             >
@@ -73,7 +68,7 @@ function App() {
                 </div>
             </Grid>
 
-            {/* Panel derecho (2/12) */}
+            {/* right-panel (2/12) */}
             <Grid item xs={4} md={2} className={"right-panel"}>
                 <Grid item container direction={{ xs: "row", md: "column" }} className={"right-container"}>
                     <Grid item xs={1} md={1} style={{backgroundColor:"transparent"}} className={"right-item-0"}>

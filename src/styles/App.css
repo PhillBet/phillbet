@@ -39,11 +39,12 @@
   background-color: transparent;
   background-size: cover;
   background-position: center;
-  padding: 20px;
-  overflow-y: auto;
+  padding: 10px;
+  overflow-y: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: 100vh;
 }
 
 /* Panel derecho */
@@ -51,10 +52,10 @@
   /*backdrop-filter: blur(4px);*/
   background-color: #dddddd;
   padding: 20px;
-  border-left: 5px solid #ccc;
+  /*border-left: 5px solid #ccc;*/
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /*justify-content: center;*/
+  /*align-items: center;*/
   transition: transform 0.3s ease-in-out;
   color: #3EB489;
 }
@@ -166,13 +167,15 @@ li:hover .icon {
 }
 
 .content {
+  width: 90%;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
   position: relative;
   z-index: 2;
   color: white;
   text-align: center;
-  padding-top: 50px;
+  /*padding-top: 50px;*/
+  /*overflow-y: auto;*/
 }
 
 .content.fade {
@@ -180,12 +183,17 @@ li:hover .icon {
 }
 
 .selected-content{
-  backdrop-filter: blur(4px);
-  border-radius: 35px;
-  padding: 10px;
-  width: 90%;
+  max-height: 90vh;
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  padding: 5px;
+  width: 100%;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  margin: 20px auto;
+  /*margin: 20px auto;*/
   color: white;
   font-size: calc(5px + 2vmin);
+}
+
+.selected-content-title{
+  /*position: sticky;*/
 }
