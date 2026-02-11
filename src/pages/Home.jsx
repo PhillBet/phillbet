@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useI18n } from '../i18n'
 
 export default function Home(){
-    const { t } = useI18n()
+    const { translation } = useI18n()
     return (
         <div className="home">
             <div className="bg">
@@ -12,19 +12,19 @@ export default function Home(){
                 <div className="blob vignette" />
             </div>
             <motion.div className="hero" initial={{ opacity: 1, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6 }}>
-                <h1>{t('hero_title')}</h1>
-                <p className="sub">{t('hero_sub')}</p>
+                <h1>{translation('hero_title')}</h1>
+                <p className="sub">{translation('hero_sub')}</p>
                 <div className="menu">
-                    <Link to="/cv" className="btn primary">{t('hero_cta_cv')}</Link>
-                    <Link to="/projects" className="btn">{t('hero_cta_projects')}</Link>
+                    <Link to="/cv" className="btn primary">{translation('hero_cta_cv')}</Link>
+                    <Link to="/projects" className="btn">{translation('hero_cta_projects')}</Link>
                 </div>
             </motion.div>
 
             <div className="cards">
-                <Card title={t('menu_cv')} to="/cv" desc="Currículum vitae / Resume"/>
-                <Card title={t('cat_programming')} to="/projects#programming" desc="Ingeniería y videojuegos"/>
-                <Card title={t('cat_literature')} to="/projects#literature" desc="Relatos y textos"/>
-                <Card title={t('cat_music')} to="/projects#music" desc="Piezas y ejercicios"/>
+                <Card title={translation('menu_cv')} to="/cv" desc={translation('cv_desc')}/>
+                <Card title={translation('cat_programming')} to="/projects#programming" desc={translation('programming_desc')}/>
+                <Card title={translation('cat_literature')} to="/projects#literature" desc={translation('literature_desc')}/>
+                <Card title={translation('cat_music')} to="/projects#music" desc={translation('music_desc')}/>
             </div>
         </div>
     )

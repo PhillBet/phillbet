@@ -9,8 +9,8 @@ const Section = ({ title, children }) => (
 )
 
 export default function CV(){
-    const { t, data } = useI18n()
-    const { profile, summary, experience, education, skills, competencies } = data
+    const { translation, data } = useI18n()
+    const { profile, summary, experience, education, skills, competencies, soft_skills } = data
 
     return (
         <div className="app">
@@ -18,6 +18,7 @@ export default function CV(){
             <motion.main className="card" initial={{ opacity: 0.001, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                 <header className="header">
                     <h1 className="title">{profile.name}</h1>
+                    <h3 className="subtitle">{profile.role}</h3>
                     <p className="muted">{profile.contactMeForMore}</p>
                     <div className="contact">
                         {/*<a href={`tel:${profile.phone.replace(/\s/g,'')}`}>{profile.phone}</a>*/}
@@ -27,17 +28,17 @@ export default function CV(){
                         <span>•</span>
                         <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
                         <span>•</span>
-                        <a href={profile.website} target="_blank" rel="noreferrer">Sitio</a>
+                        <a href={profile.website} target="_blank" rel="noreferrer">Web Site</a>
                     </div>
                 </header>
 
-                <Section title={t('section_profile')}>
+                <Section title={translation('section_profile')}>
                     <ul className="list">
                         {summary.map((s, i) => <li key={i}>{s}</li>)}
                     </ul>
                 </Section>
 
-                <Section title={t('section_experience')}>
+                <Section title={translation('section_experience')}>
                     {experience.map((exp, idx) => (
                         <motion.div key={idx} className="exp" initial={{ opacity: 0.001, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: 0.4 }}>
                             <div className="exp-head">
@@ -55,7 +56,7 @@ export default function CV(){
                 </Section>
 
                 <div className="grid two">
-                    <Section title={t('section_education')}>
+                    <Section title={translation('section_education')}>
                         <ul className="list">
                             {education.map((e, i) => (
                                 <li key={i} className="edu">
@@ -67,7 +68,7 @@ export default function CV(){
                         </ul>
                     </Section>
 
-                    <Section title={t('section_skills')}>
+                    <Section title={translation('section_skills')}>
                         <ul className="list">
                             {skills.map((s, i) => (
                                 <li key={i}><strong>{s.label}:</strong> {s.value}</li>
@@ -76,9 +77,14 @@ export default function CV(){
                     </Section>
                 </div>
 
-                <Section title={t('section_competencies')}>
+                <Section title={translation('section_competencies')}>
                     <div className="chips">
                         {competencies.map((c, i) => <span className="chip" key={i}>{c}</span>)}
+                    </div>
+                </Section>
+                <Section title={translation('section_soft_skills')}>
+                    <div className="chips">
+                        {soft_skills.map((c, i) => <span className="chip" key={i}>{c}</span>)}
                     </div>
                 </Section>
             </motion.main>

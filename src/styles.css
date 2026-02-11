@@ -29,6 +29,7 @@ body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,
 
 .header{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
 .title{margin:0;font-size:clamp(28px,5vw,40px);line-height:1.1;background:linear-gradient(90deg,var(--mint),var(--aqua));-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{margin:0;font-size:clamp(14px,5vw,20px);line-height:1.1;background:linear-gradient(90deg,var(--aqua),var(--teal4));-webkit-background-clip:text;background-clip:text;color:transparent}
 .muted{color:rgba(255,255,255,0.72)}
 .contact{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .contact a{color:var(--aqua);text-decoration:none}

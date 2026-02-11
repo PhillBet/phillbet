@@ -8,7 +8,7 @@ import LanguageSwitcher from './components/LanguageSwitcher'
 import Logo from '../src/assets/phill_logo_pixel.svg'
 
 function Nav(){
-    const { t } = useI18n()
+    const { translation } = useI18n()
     return (
         <nav className="nav">
             <Link to="/" className="brand" title="Home">
@@ -21,9 +21,9 @@ function Nav(){
                 />
             </Link>
             <div className="spacer"/>
-            <Link to="/" className="navlink">{t('menu_home')}</Link>
-            <Link to="/cv" className="navlink">{t('menu_cv')}</Link>
-            <Link to="/projects" className="navlink">{t('menu_projects')}</Link>
+            <Link to="/" className="navlink">{translation('menu_home')}</Link>
+            <Link to="/cv" className="navlink">{translation('menu_cv')}</Link>
+            <Link to="/projects" className="navlink">{translation('menu_projects')}</Link>
             <LanguageSwitcher />
         </nav>
     )
